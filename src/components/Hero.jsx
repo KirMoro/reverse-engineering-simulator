@@ -52,14 +52,15 @@ export default function Hero({ onStart }) {
             className="font-display text-5xl font-bold leading-[0.94] text-text-primary sm:text-6xl lg:text-7xl"
             transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
           >
-            What Hackers See When They
-            <span className="block text-danger"> Decompile </span>
-            Your App
+            Reverse Engineering
+            <span className="block text-danger"> Simulator </span>
+            for Mobile App Security
           </motion.h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-text-secondary md:text-xl">
-            An interactive look at mobile app reverse engineering: protected versus
-            unprotected builds, seen through the eyes of an attacker.
+            An interactive mobile app reverse engineering walkthrough for developers,
+            security engineers, and CTOs. Compare app decompilation, code obfuscation,
+            and runtime protection through the same attacker workflow.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-stretch">
@@ -71,7 +72,8 @@ export default function Hero({ onStart }) {
               Start Simulation →
             </button>
             <div className="rounded-xl border border-surface-400/30 bg-surface-700/60 px-5 py-4 text-sm leading-6 text-text-secondary">
-              Static educational page. No cookies, no forms, no trackers.
+              Educational simulator for mobile app security reviews. No cookies, no
+              forms, no tracking.
             </div>
           </div>
         </div>
@@ -104,14 +106,14 @@ export default function Hero({ onStart }) {
               <span className="terminal-dot bg-amber-400" />
               <span className="terminal-dot bg-safe" />
               <span className="ml-3 font-mono text-xs uppercase tracking-[0.28em] text-text-muted">
-                Attack Preview
+                Mobile App Attack Preview
               </span>
             </div>
 
             <div className="grid gap-4 px-6 pb-6 lg:grid-cols-2">
               <div className="min-w-0 rounded-2xl border border-danger/20 bg-danger/5 p-4">
                 <div className="font-display text-sm font-semibold uppercase tracking-[0.24em] text-danger">
-                  Decompiled
+                  Decompiled build
                 </div>
                 <div className="mt-4 space-y-2 font-mono text-xs leading-7 sm:text-sm">
                   <div className="text-syntax-keyword">private static final String</div>
@@ -122,7 +124,7 @@ export default function Hero({ onStart }) {
 
               <div className="min-w-0 rounded-2xl border border-safe/20 bg-safe/5 p-4">
                 <div className="font-display text-sm font-semibold uppercase tracking-[0.24em] text-safe">
-                  Protected
+                  Protected build
                 </div>
                 <div className="mt-4 space-y-2 font-mono text-xs leading-7 sm:text-sm">
                   <div className="text-syntax-keyword">private static final String</div>

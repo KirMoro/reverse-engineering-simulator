@@ -5,6 +5,7 @@ import Summary from './components/Summary';
 import Footer from './components/Footer';
 import {
   actionItems,
+  faqs,
   openSourceTools,
   resources,
   steps,
@@ -52,6 +53,7 @@ export default function App() {
         />
         <Summary
           actionItems={actionItems}
+          faqs={faqs}
           metrics={summaryMetrics}
           onRunAgain={handleRunAgain}
           openSourceTools={openSourceTools}
@@ -62,4 +64,3 @@ export default function App() {
     </div>
   );
 }
-

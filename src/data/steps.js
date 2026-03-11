@@ -426,20 +426,20 @@ export const summaryMetrics = [
 
 export const actionItems = [
   {
-    title: 'Scan your app for secrets',
-    body: 'Run static analysis against every release binary and fail CI when credentials, tokens, or signing material appear in the app bundle.',
+    title: 'Scan every mobile app build for secrets',
+    body: 'Run static analysis against each release artifact and fail CI when API keys, tokens, credentials, or signing material appear in the mobile app bundle.',
   },
   {
-    title: 'Obfuscate beyond defaults',
-    body: 'Default shrinkers reduce readability, but layered obfuscation, string protection, and control-flow hardening raise attacker cost much more effectively.',
+    title: 'Use code obfuscation beyond platform defaults',
+    body: 'Default shrinkers reduce readability, but layered code obfuscation, string protection, and control-flow hardening make app decompilation much less useful to an attacker.',
   },
   {
-    title: 'Add runtime checks',
-    body: 'Detect debuggers, root or jailbreak conditions, hooking frameworks, emulators, and integrity failures before sensitive features execute.',
+    title: 'Add runtime protection checks',
+    body: 'Detect debuggers, root or jailbreak conditions, hooking frameworks, emulators, and integrity failures before sensitive mobile app features execute.',
   },
   {
-    title: 'Monitor post-release',
-    body: 'Treat production as hostile. Track how binaries are being tampered with in the wild and feed those signals back into your secure release process.',
+    title: 'Monitor reverse engineering after release',
+    body: 'Treat production as hostile. Track tampering, repackaging, and instrumentation activity in the wild, then feed those signals back into your secure release process.',
   },
 ];
 
@@ -447,19 +447,36 @@ export const resources = [
   {
     title: 'OWASP Mobile Application Security',
     href: 'https://mas.owasp.org/',
-    description: 'Industry standard for mobile app security testing and hardening.',
+    description: 'A practical baseline for mobile app security testing, architecture review, and hardening.',
   },
   {
     title: 'OWASP Mobile Top 10',
     href: 'https://owasp.org/www-project-mobile-top-10/',
-    description: 'A concise map of the most common mobile security risks.',
+    description: 'A concise view of the most common mobile app security risks and failure patterns.',
   },
   {
     title: 'Android Security Best Practices',
     href: 'https://developer.android.com/topic/security/best-practices',
-    description: 'Official Android guidance for secure app design and implementation.',
+    description: 'Official guidance for secure Android app design, storage, networking, and hardening.',
+  },
+];
+
+export const faqs = [
+  {
+    question: 'What is mobile app reverse engineering?',
+    answer:
+      'Mobile app reverse engineering is the process of unpacking, decompiling, and inspecting an app binary to recover code, secrets, architecture details, and business logic. Attackers use it to map entry points, steal credentials, tamper with app logic, and prepare runtime hooks.',
+  },
+  {
+    question: 'Can code obfuscation stop app decompilation on its own?',
+    answer:
+      'No. Code obfuscation makes app decompilation less readable, but it does not remove attack paths by itself. Stronger results come from layering obfuscation with string encryption, integrity checks, anti-hooking defenses, and secure backend validation.',
+  },
+  {
+    question: 'How can I tell whether my mobile app exposes secrets?',
+    answer:
+      'Start by scanning the release binary, not just the source code. Run static analysis, inspect decompiled output, and search extracted strings for API keys, tokens, endpoints, certificates, and database credentials. If the binary reveals them, an attacker can usually find them too.',
   },
 ];
 
 export const openSourceTools = ['MobSF', 'JADX', 'APKTool'];
-

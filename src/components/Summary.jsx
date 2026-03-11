@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 export default function Summary({
   actionItems,
+  faqs,
   metrics,
   onRunAgain,
   openSourceTools,
@@ -14,15 +15,15 @@ export default function Summary({
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <div className="font-mono text-[11px] uppercase tracking-[0.32em] text-safe-light">
-            Summary
+            Mobile App Security Summary
           </div>
           <h2 className="mt-4 font-display text-4xl font-bold text-text-primary md:text-5xl">
-            Final comparison: attacker effort versus defender friction
+            Why mobile app protection changes reverse engineering outcomes
           </h2>
           <p className="mt-5 text-lg leading-8 text-text-secondary">
-            The point is not to make reverse engineering impossible. It is to make it
-            expensive, noisy, and unreliable enough that opportunistic attacks stop being
-            viable.
+            Mobile app reverse engineering does not disappear after release. The goal is
+            to make app decompilation, code tampering, and runtime hooking expensive,
+            noisy, and unreliable enough that opportunistic attacks stop being viable.
           </p>
         </div>
 
@@ -59,7 +60,7 @@ export default function Summary({
         <div className="mt-16 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)]">
           <div>
             <h3 className="font-display text-2xl font-semibold text-text-primary">
-              What you can do today
+              How to protect a mobile app from reverse engineering
             </h3>
             <div className="mt-6 grid gap-4 md:grid-cols-2">
               {actionItems.map((item, index) => (
@@ -81,11 +82,12 @@ export default function Summary({
 
           <div className="rounded-[28px] border border-surface-400/20 bg-surface-700/70 p-6 shadow-panel">
             <h3 className="font-display text-2xl font-semibold text-text-primary">
-              Now that you&apos;ve seen what attackers see, what&apos;s your app&apos;s security
-              posture?
+              Now that you&apos;ve used this reverse engineering simulator, how exposed is
+              your mobile app?
             </h3>
             <p className="mt-4 leading-7 text-text-secondary">
-              Check out these open resources to get started:
+              Use these open mobile app security resources to turn this walkthrough into
+              an engineering checklist:
             </p>
             <div className="mt-6 space-y-4">
               {resources.map((resource) => (
@@ -106,7 +108,7 @@ export default function Summary({
               ))}
             </div>
             <p className="mt-6 text-sm leading-7 text-text-secondary">
-              Or scan your own app for free with open-source tools like{' '}
+              Or inspect your own binary with open-source tools like{' '}
               <span className="text-text-primary">{openSourceTools.join(', ')}</span>.
             </p>
             <button
@@ -116,6 +118,25 @@ export default function Summary({
             >
               Run Again →
             </button>
+          </div>
+        </div>
+
+        <div className="mt-16">
+          <h3 className="font-display text-2xl font-semibold text-text-primary">
+            Frequently asked questions about mobile app reverse engineering
+          </h3>
+          <div className="mt-6 grid gap-4 lg:grid-cols-3">
+            {faqs.map((faq) => (
+              <div
+                className="rounded-2xl border border-surface-400/20 bg-surface-700/70 p-5"
+                key={faq.question}
+              >
+                <h4 className="font-display text-lg font-semibold text-text-primary">
+                  {faq.question}
+                </h4>
+                <p className="mt-3 leading-7 text-text-secondary">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -57,14 +57,15 @@ export default function Simulator({
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <div className="font-mono text-[11px] uppercase tracking-[0.32em] text-accent-light">
-            Interactive Lab
+            Interactive Walkthrough
           </div>
           <h2 className="mt-4 font-display text-4xl font-bold text-text-primary md:text-5xl">
-            Reverse engineering, one attack step at a time
+            Mobile app reverse engineering, step by step
           </h2>
           <p className="mt-5 text-lg leading-8 text-text-secondary">
-            Compare what an attacker sees in an unprotected build versus a hardened
-            build, then inspect why each difference changes exploitability.
+            Follow five common attack paths used in app decompilation, secret extraction,
+            tampering, and runtime hooking, then compare how mobile app protection changes
+            what an attacker can actually use.
           </p>
         </div>
 
@@ -94,7 +95,7 @@ export default function Simulator({
                 </div>
 
                 <div className="hidden rounded-2xl border border-surface-400/20 bg-surface-700/60 px-4 py-3 text-right font-mono text-xs uppercase tracking-[0.28em] text-text-muted md:block">
-                  Protected versus unprotected
+                  Protected vs. unprotected mobile app build
                 </div>
               </div>
 
@@ -186,4 +187,3 @@ export default function Simulator({
     </section>
   );
 }
-

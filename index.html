@@ -3,28 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reverse Engineering Simulator — Protected vs. Unprotected Mobile Apps</title>
+    <title>Reverse Engineering Simulator for Mobile App Security</title>
     <meta
       name="description"
-      content="See what attackers see when they decompile your mobile app. An interactive side-by-side comparison of protected and unprotected Android app code."
+      content="Explore a reverse engineering simulator comparing mobile app decompilation, code obfuscation, tampering, and runtime protection side by side."
     />
     <meta
       property="og:title"
-      content="What Hackers See When They Decompile Your App"
+      content="Reverse Engineering Simulator for Mobile App Security"
     />
     <meta
       property="og:description"
-      content="Interactive simulator: 5 common mobile app attack techniques, unprotected vs. protected."
+      content="Interactive mobile app reverse engineering walkthrough with decompilation, secret extraction, tampering, and runtime hooking examples."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="/og-image.svg" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Reverse Engineering Simulator for Mobile App Security"
+    />
+    <meta
+      name="twitter:description"
+      content="Interactive mobile app reverse engineering walkthrough with decompilation, secret extraction, tampering, and runtime hooking examples."
+    />
     <meta name="theme-color" content="#06060a" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is mobile app reverse engineering?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mobile app reverse engineering is the process of unpacking, decompiling, and inspecting an app binary to recover code, secrets, architecture details, and business logic."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can code obfuscation stop app decompilation on its own?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Code obfuscation makes app decompilation less readable, but stronger protection comes from layering obfuscation with string encryption, integrity checks, anti-hooking defenses, and secure backend validation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I tell whether my mobile app exposes secrets?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Scan the release binary, inspect decompiled output, and search extracted strings for API keys, tokens, endpoints, certificates, and database credentials."
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="bg-surface-900">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
-
