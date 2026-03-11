@@ -1,0 +1,24 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#06060A"/>
+  <rect x="40" y="40" width="1120" height="550" rx="32" fill="#0A0A0F" stroke="#2A2A45"/>
+  <circle cx="170" cy="130" r="180" fill="#FF4444" fill-opacity="0.09"/>
+  <circle cx="1020" cy="500" r="180" fill="#00FF88" fill-opacity="0.09"/>
+  <text x="80" y="150" fill="#E2E8F0" font-size="64" font-family="Arial, sans-serif" font-weight="700">
+    What Hackers See When They
+  </text>
+  <text x="80" y="228" fill="#FF6B6B" font-size="76" font-family="Arial, sans-serif" font-weight="700">
+    Decompile Your App
+  </text>
+  <text x="80" y="288" fill="#94A3B8" font-size="28" font-family="Arial, sans-serif">
+    Interactive simulator: protected vs. unprotected mobile code
+  </text>
+  <rect x="80" y="340" width="480" height="180" rx="18" fill="#10101A" stroke="#FF4444" stroke-opacity="0.4"/>
+  <rect x="640" y="340" width="480" height="180" rx="18" fill="#10101A" stroke="#00FF88" stroke-opacity="0.4"/>
+  <text x="110" y="390" fill="#FF6B6B" font-size="20" font-family="monospace" font-weight="700">UNPROTECTED</text>
+  <text x="670" y="390" fill="#33FFAA" font-size="20" font-family="monospace" font-weight="700">PROTECTED</text>
+  <text x="110" y="438" fill="#C792EA" font-size="18" font-family="monospace">private static final String API_KEY</text>
+  <text x="110" y="470" fill="#C3E88D" font-size="18" font-family="monospace">= "sk_demo_live_example_only";</text>
+  <text x="670" y="438" fill="#C792EA" font-size="18" font-family="monospace">private static final String a</text>
+  <text x="670" y="470" fill="#C3E88D" font-size="18" font-family="monospace">= x9c.d(new byte[]{0x7a, ...});</text>
+</svg>
+

@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  color-scheme: dark;
+  background-color: #06060a;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-surface-900 font-body text-text-primary antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  @apply bg-accent/30 text-white;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-surface-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-surface-400;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-accent;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.42;
+}
+
+.bg-hero-grid {
+  background-image:
+    linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.code-panel {
+  @apply rounded-2xl border border-surface-400/30 bg-surface-700 font-mono text-code-base shadow-panel;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.code-panel-unprotected {
+  @apply border-danger/20;
+  box-shadow: inset 0 0 40px rgba(255, 68, 68, 0.03);
+}
+
+.code-panel-protected {
+  @apply border-safe/20;
+  box-shadow: inset 0 0 40px rgba(0, 255, 136, 0.03);
+}
+
+.line-vulnerable {
+  @apply border-l-2 border-danger bg-danger-dim;
+}
+
+.line-protected {
+  @apply border-l-2 border-safe bg-safe-dim;
+}
+
+.terminal {
+  @apply rounded-2xl border border-surface-400/20 bg-black/80 p-4 font-mono text-code-sm shadow-panel;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-header {
+  @apply mb-3 flex items-center gap-2 border-b border-surface-400/20 pb-3;
+}
+
+.terminal-dot {
+  @apply h-3 w-3 rounded-full;
+}
+
+.scanline::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.03) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+.cursor-blink::after {
+  content: '█';
+  @apply animate-blink text-safe;
+}
+
+.matrix-strip {
+  @apply relative overflow-hidden rounded-full border border-accent/20 bg-surface-700/70 font-mono text-[10px] uppercase tracking-[0.35em] text-accent/70;
+}
+
+.matrix-strip::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.18), transparent);
+  animation: shimmer 2.6s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
