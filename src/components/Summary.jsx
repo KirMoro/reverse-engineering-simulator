@@ -30,12 +30,12 @@ export default function Summary({
           {metrics.map((metric, index) => (
             <motion.div
               animate={{ opacity: 1, y: 0 }}
-              className="rounded-2xl border border-surface-400/20 bg-surface-700/70 p-5 shadow-panel"
+              className="flex h-full flex-col rounded-2xl border border-surface-400/20 bg-surface-700/70 p-5 shadow-panel"
               initial={{ opacity: 0, y: reduceMotion ? 0 : 14 }}
               key={metric.label}
               transition={reduceMotion ? { duration: 0 } : { delay: index * 0.05, duration: 0.24 }}
             >
-              <div className="text-[11px] font-mono uppercase tracking-[0.28em] text-text-muted">
+              <div className="min-h-[3.5rem] text-[11px] font-mono uppercase tracking-[0.28em] text-text-muted">
                 {metric.label}
               </div>
               <div className="mt-5 space-y-3">
@@ -122,4 +122,3 @@ export default function Summary({
     </section>
   );
 }
-
