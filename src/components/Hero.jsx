@@ -62,9 +62,9 @@ export default function Hero({ onStart }) {
             unprotected builds, seen through the eyes of an attacker.
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-stretch">
             <button
-              className="rounded-xl bg-accent px-8 py-4 font-display text-base font-semibold text-white shadow-glow-accent transition-all duration-300 hover:bg-accent-light hover:shadow-glow-accent focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-surface-900"
+              className="inline-flex min-w-[16rem] items-center justify-center rounded-xl bg-accent px-10 py-3 font-display text-base font-semibold text-white shadow-glow-accent transition-all duration-300 hover:bg-accent-light hover:shadow-glow-accent focus:outline-none focus:ring-2 focus:ring-accent-light focus:ring-offset-2 focus:ring-offset-surface-900 sm:min-w-[18rem]"
               onClick={onStart}
               type="button"
             >
@@ -78,7 +78,7 @@ export default function Hero({ onStart }) {
 
         <motion.div
           animate={reduceMotion ? undefined : { y: [0, -8, 0] }}
-          className="relative"
+          className="relative min-w-0"
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         >
           <div className="code-panel code-panel-unprotected absolute -left-2 top-6 hidden w-44 rotate-[-4deg] border-danger/30 p-4 shadow-glow-danger lg:block">
@@ -109,24 +109,24 @@ export default function Hero({ onStart }) {
             </div>
 
             <div className="grid gap-4 px-6 pb-6 lg:grid-cols-2">
-              <div className="rounded-2xl border border-danger/20 bg-danger/5 p-4">
+              <div className="min-w-0 rounded-2xl border border-danger/20 bg-danger/5 p-4">
                 <div className="font-display text-sm font-semibold uppercase tracking-[0.24em] text-danger">
                   Decompiled
                 </div>
-                <div className="mt-4 space-y-2 font-mono text-sm">
+                <div className="mt-4 space-y-2 font-mono text-xs leading-7 sm:text-sm">
                   <div className="text-syntax-keyword">private static final String</div>
-                  <div className="text-syntax-string">"sk_demo_live_example_only"</div>
+                  <div className="break-all text-syntax-string">"sk_demo_live_example_only"</div>
                   <div className="text-syntax-comment">// readable, reusable, exposed</div>
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-safe/20 bg-safe/5 p-4">
+              <div className="min-w-0 rounded-2xl border border-safe/20 bg-safe/5 p-4">
                 <div className="font-display text-sm font-semibold uppercase tracking-[0.24em] text-safe">
                   Protected
                 </div>
-                <div className="mt-4 space-y-2 font-mono text-sm">
+                <div className="mt-4 space-y-2 font-mono text-xs leading-7 sm:text-sm">
                   <div className="text-syntax-keyword">private static final String</div>
-                  <div className="text-syntax-string">x9c.d(new byte[]&#123;0x7a, ...&#125;)</div>
+                  <div className="break-all text-syntax-string">x9c.d(new byte[]&#123;0x7a, ...&#125;)</div>
                   <div className="text-syntax-comment">// runtime-only secret recovery</div>
                 </div>
               </div>
@@ -154,4 +154,3 @@ export default function Hero({ onStart }) {
     </section>
   );
 }
-
